@@ -1,36 +1,36 @@
 class Signal {
-  constructor (type, value) {
-    this.type = type
-    this.value = value
+  constructor(type, value) {
+    this.type = type;
+    this.value = value;
   }
 
-  static Return (value) {
-    return new Signal('return', value)
+  static Return(value) {
+    return new Signal("return", value);
   }
 
-  static Break (label = null) {
-    return new Signal('break', label)
+  static Break(label = null) {
+    return new Signal("break", label);
   }
 
-  static Continue (label) {
-    return new Signal('continue', label)
+  static Continue(label) {
+    return new Signal("continue", label);
   }
 
   static isReturn(signal) {
-    return signal instanceof Signal && signal.type === 'return';
+    return signal instanceof Signal && signal.type === "return";
   }
 
   static isContinue(signal) {
-    return signal instanceof Signal && signal.type === 'continue';
+    return signal instanceof Signal && signal.type === "continue";
   }
 
   static isBreak(signal) {
-    return signal instanceof Signal && signal.type === 'break';
+    return signal instanceof Signal && signal.type === "break";
   }
 
-  static isSignal (signal) {
+  static isSignal(signal) {
     return signal instanceof Signal;
   }
 }
 
-module.exports = Signal
+module.exports = Signal;
