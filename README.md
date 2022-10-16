@@ -22,13 +22,15 @@
   - **index.js**：将各个版本的模块导出（考虑到高版本兼容低版本）
   - **es5.js**：包含一个`NodeHandler`对象，处理不同类型的节点
 - **index.js**：入口文件，有一个`Interpreter`类，可以传入AST树然后生成JS代码
-- **iterator.js**：
-- **scope.js**：
-- **signal.js**：
-- **standard.js**：
-- **value.js**：
+- **iterator.js**：节点遍历器，有两个方法：`traverse`和`createScope`
+- **scope.js**：处理作用域，创建一个`Scope`类
+- **signal.js**：判断是否为`return``break` 和`continue`
+- **standard.js**：标准库，放入全局作用域
+- **value.js**：两种变量类型`SimpleValue`和`MemberValue`，后者是对象的属性
 
 ### 流程图
+
+![Interpreter](https://github.com/gaoachao/Interpreter/raw/main/assets/images/1.jpg)
 
 ## 参考资料
 
