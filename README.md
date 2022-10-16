@@ -4,7 +4,7 @@
 
 - `interpreter`是一个`JavaScript`解释器，功能是将AST抽象树转换为`JavaScript`高级语言。
 - 对应的是`babel`的`generate`阶段。（不过`babel`还能生成`souce-map`）
-- 目前只支持ES5的语法，且使用语言`JavaScript`，下一步将尝试使用`TypeScript`。
+- 目前只支持ES5(以及ES6`const`和`let`)的语法，且使用语言`JavaScript`，下一步将尝试使用`TypeScript`。
 
 ## 编译器工作流程
 
@@ -24,7 +24,7 @@
 - **index.js**：入口文件，有一个`Interpreter`类，可以传入AST树然后生成JS代码
 - **iterator.js**：节点遍历器，有两个方法：`traverse`和`createScope`
 - **scope.js**：处理作用域，创建一个`Scope`类
-- **signal.js**：判断是否为`return``break` 和`continue`
+- **signal.js**：判断是否为`return`或`break` 或`continue`
 - **standard.js**：标准库，放入全局作用域
 - **value.js**：两种变量类型`SimpleValue`和`MemberValue`，后者是对象的属性
 
